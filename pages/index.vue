@@ -4,46 +4,45 @@
       div.nav
         ul
           li.logo
+            img(src="~assets/images/logo2.png", alt="logo")
             |AIDataShare
-            //- img.logo(src="~assets/images/logo.webp", alt="logo")
-          li WHITE PAPER
-          li SERVICE
-          li AIAS
-          li STATS
-          li ENG
+          li
+            div WHITE PAPER
+              div.line
+          li(@click="scrollToPosition('service')")
+            div SERVICE
+              div.line
+          li(@click="scrollToPosition('aias')")
+            div AIAS
+              div.line
+          li(@click="scrollToPosition('recommend')")
+            div RECOMMEND
+              div.line
+          //- li ENG
     div.main
       div.banner
-        //- img(src="~assets/images/banner.webp", alt="banner")
         div.banner-center
-          p AI EQUITY
-            br
-            .
-              SHARING
-          p AI WORKS
-            br
-            .
-              TRANSACTIONS
-        div.banner-bottom
+          | AI EQUITY SHARING  AND AI WORKS TRANSACTIONS
           p A NEW DECENTRALIZED NETWORK SYSTEM
       div.vision.wow.animate__fadeInUp
         h2.title VISION
-        ul
-          li
-            img(src="~assets/images/vision1.webp", alt="alt")
-            p Reduce the cost of AI use, so that AI is more accessible, and globally affordable
-            span The operation of AI consumes a lot of computing power and electricity,
-              | so it is inevitable to pay for using AI service. However,
-              | people in many places around the world cannot get US dollars or electronic payment,
-              | and many people cannot afford the cost of AI use due to economic difficulties. AIDataShare Network aims to solve these problems.
-          li
-            img(src="~assets/images/vision2.webp", alt="alt")
-            h3.subtitle Generate revenue for    generative AI creators
-            span Because the generation of AI is random,
-              |even if you input the same prompt word, the result of each time is different,
-              |and the result is totally different from others. Your every attempt becomes a unique,
-              |exclusive AI art. Upload your AI work and generative prompts to our network,
-              |cast them into NFT and trade them to start your journey for making revenue.
-      div.service.wow.animate__fadeInUp
+        div.vision-content
+            img(src="~assets/images/vision.png", alt="alt")
+            ul
+              li
+                p.subtitle Generate revenue for    generative AI creators
+                span Because the generation of AI is random,
+                  |even if you input the same prompt word, the result of each time is different,
+                  |and the result is totally different from others. Your every attempt becomes a unique,
+                  |exclusive AI art. Upload your AI work and generative prompts to our network,
+                  |cast them into NFT and trade them to start your journey for making revenue.
+              li
+                p.subtitle Reduce the cost of AI use, so that AI is more accessible, and globally affordable
+                span The operation of AI consumes a lot of computing power and electricity,
+                  | so it is inevitable to pay for using AI service. However,
+                  | people in many places around the world cannot get US dollars or electronic payment,
+                  | and many people cannot afford the cost of AI use due to economic difficulties. AIDataShare Network aims to solve these problems.
+      div.service.wow.animate__fadeInUp(ref="service")
         h2.wow.animate__fadeInDown.title SERVICE
         ul
           li.wow.animate__fadeInLeft
@@ -54,7 +53,34 @@
             img(src="~assets/images/service.webp", alt="alt")
             h3.subtitle GENERATIVE AI TRADING
             p It`s time to upload your AI works and generative prompts to our network, mint them into NFTs and trade them to start your journey for making revenue.
-      div.AIAS.wow.animate__fadeInUp
+      div.recommend(ref="recommend")
+        h2.wow.animate__fadeInDown.title RECOMMEND
+        ul
+          li
+            img(src="~assets/images/chatgpt.png", alt="alt")
+            |ChatGpt
+          li
+            img(src="~assets/images/bard.svg", alt="alt")
+            |Bard
+          li
+            img(src="~assets/images/anthropic.svg", alt="alt")
+            |Anthropic
+          li
+            img(src="~assets/images/youchat.webp", alt="alt")
+            |YouChat
+          li
+            img(src="~assets/images/gemini.svg", alt="alt")
+            |Gemini
+          li
+            img(src="~assets/images/midjourney.svg", alt="alt")
+            |Midjourney
+          li
+            img(src="~assets/images/adobe.svg", alt="alt")
+            |Adobe Firefly
+          li
+            img(src="~assets/images/stabie.png", alt="alt")
+            |Stable Diffusion
+      div.aias.wow.animate__fadeInUp(ref="aias")
         h2.title AIAS（AIDataShareCoin Token）
         img.logo(src="~assets/images/logo.png", alt="alt")
         p AIAS is the only payment method in the transaction services provided by our network.Below is the distribution method of the token:
@@ -71,9 +97,6 @@
           li
             span Founders team
             span 10%
-      div.cryto
-        h2.wow.animate__fadeInLeft.title Crypto Markets
-        img.wow.animate__zoomIn(src="~assets/images/cryto.webp", alt="alt")
       div.technology
         h2.title Technology Roadmap
         client-only
@@ -95,9 +118,6 @@
             :class="activeIndex === technologyData.length - 4 ? 'disabled' : ''"
           )
             i.swiper-button-next(slot="button-next")
-      div.stats
-        h2.wow.animate__fadeInLeft.title USER STATISTICS
-        img.wow.animate__zoomIn(src="~assets/images/user.webp", alt="alt")
       div.footer
         h2.wow.animate__fadeOutLeft.title Contact us
         p Please contact us for any inquiries related to service and operation.
@@ -146,6 +166,10 @@ export default Vue.extend({
       })
   },
   methods: {
+    scrollToPosition(e) {
+      const container = this.$refs[e]
+      container.scrollIntoView({behavior: 'smooth'})
+    },
     prev() {
       this.$refs.mySwiper.$swiper.slidePrev()
     },
@@ -172,82 +196,102 @@ export default Vue.extend({
         width: 1200px;
         display: flex;
         ul {
-          .logo {
-            font-size: 26px;
-            img {
-              width: 100px;
-              height: 100px;
-            }
-          }
           width: 100%;
           height: 100px;
           display: flex;
           justify-content: space-between;
           align-items: center;
-          font-size: 20px;
+          font-size: 22px;
+          li {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            &.logo {
+              margin-right: 300px;
+              font-size: 30px;
+              img {
+                filter: brightness(0) invert(1);
+                width: 50px;
+                margin-right: 10px;
+              }
+            }
+            &:hover {
+              .line {
+                width: 100%;
+              }
+            }
+            .line {
+              width: 0;
+              height: 4px;
+              margin-top: 5px;
+              margin-bottom: -10px;
+              background-color: rgb(0,224,202);
+              transition: .3s;
+            }
+          }
         }
       }
     }
     .main {
       .title {
-        font-size: 50px;
+        font-size: 60px;
         text-align: center;
         margin-bottom: 80px;
       }
       .subtitle {
-        font-size: 32px;
+        font-size: 36px;
         margin: 15px 0;
       }
       .banner {
         background: url(~assets/images/banner.webp) no-repeat;
         background-size: 100% auto;
         position: relative;
-        height: 900px;
+        height: 1080px;
 
-        img {
-          z-index: -1;
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          width: 100%;
-          height: 700px;
-          object-fit: cover;
-        }
         &-center {
-          padding: 370px 20px 0;
+          width: 1080px;
+          height: 100%;
+          margin: 0 auto;
+          padding: 10px;
+          border-radius: 50%;
+          font-size: 60px;
           display: flex;
-          justify-content: space-between;
-          font-size: 60px;
-          font-weight: bold;
-        }
-        &-bottom {
-          padding: 250px 0 0 160px;
-          font-size: 60px;
-          font-weight: bold;
+          justify-content: center;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          background-color: rgba(2, 24, 48, 0.55);
+          p {
+            margin-top: 40px;
+            font-size: 40px;
+            color: #ffffffb3;
+          }
         }
       }
       .vision {
         width: 1200px;
         margin: 0 auto;
         padding: 30px 0;
-        ul {
+        &-content {
           width: 100%;
           display: flex;
-          justify-content: space-between;
-          li {
-            width: 500px;
-            img {
-              width: 100%;
-              border-radius: 8px;
-            }
-            p {
-              margin: 16px 0;
-              font-size: 24px;
-            }
-            span {
-              font-size: 20px;
+          align-items: center;
+          img {
+            width: 400px;
+            height: 500px;
+            border-radius: 8px;
+            object-fit: cover;
+            margin-right: 60px;
+          }
+          ul {
+            li {
+              p {
+                margin: 16px 0;
+                font-size: 36px;
+              }
+              span {
+                font-size: 24px;
+              }
             }
           }
         }
@@ -267,29 +311,62 @@ export default Vue.extend({
               border-radius: 8px;
             }
             p {
-              font-size: 20px ;
+              font-size: 24px ;
               margin-bottom: 20px;
             }
           }
         }
       }
-      .AIAS {
+      .recommend {
+        width: 1200px;
+        margin: 0 auto;
+        ul {
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          li {
+            width: 280px;
+            height: 140px;
+            margin-bottom: 40px;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            font-size: 24px;
+            border: 1px solid #ffffff1a;
+            border-radius: 8px;
+            img {
+              display: block;
+              height: 70px;
+              margin: 0 auto 10px;
+            }
+          }
+        }
+      }
+      .aias {
         position: relative;
+        width: 1200px;
+        margin: 0 auto;
         padding: 100px 0;
+        .title {
+          margin-bottom: 60px;
+          text-align: right;
+        }
         .logo {
           position: absolute;
           width: 200px;
           top: 110px;
-          left: 300px;
+          left: 0;
         }
         p {
           margin: 0 auto;
-          width: 400px;
-          font-size: 20px;
+          width: 650px;
+          font-size: 24px;
         }
         ul {
           width: 1200px;
-          margin: 40px auto 0;
+          margin: 60px auto 0;
           border: 1px solid #ffffff1a;
           border-radius: 8px;
           background-color: #ffffff1a;
@@ -305,27 +382,13 @@ export default Vue.extend({
               margin: 0 1px;
               background-color: #021830;
               padding: 10px;
-              font-size: 20px;
+              font-size: 24px;
               text-align: center;
               &:last-child {
                 margin: 0;
               }
             }
           }
-        }
-      }
-      .cryto {
-        padding: 100px 0;
-        width: 1200px;
-        margin: 0 auto;
-        .title {
-          margin-bottom: 20px;
-          text-align: left;
-        }
-        img {
-          width: 100%;
-          border: 1px solid #ffffff1a;
-          border-radius: 8px;
         }
       }
       .technology {
@@ -341,9 +404,18 @@ export default Vue.extend({
             .swiper-slide {
               width: 275px;
               word-wrap:break-word;
+              &:hover {
+                p {
+                  color: #759dc0;
+                }
+                .circle:before {
+                  border-color: #759dc0;
+                  transform: scale(1.25)
+                }
+              }
               p {
                 padding: 0 20px 40px;
-                font-size: 24px
+                font-size: 30px
               }
               .circle {
                 position: absolute;
@@ -359,9 +431,9 @@ export default Vue.extend({
                   top: -8px;
                   left: 20px;
                   box-sizing: border-box;
-                  width: 12px;
-                  height: 12px;
-                  border: 4px solid #759dc0;
+                  width: 14px;
+                  height: 14px;
+                  border: 4px solid #c0d3d9;
                   border-radius: 50%;
                   background-color: #fff;
                   transition: all .2s;
@@ -370,7 +442,7 @@ export default Vue.extend({
               span {
                 display: block;
                 padding: 20px 20px;
-                font-size: 16px;
+                font-size: 24px;
                 word-wrap:break-word
               }
             }
@@ -378,7 +450,7 @@ export default Vue.extend({
         }
         .button-prev,.button-next {
           position: absolute;
-          top: 180px;
+          top: 194px;
           width: 50px;
           height: 50px;
           background-color: #ffffff1a;
@@ -407,45 +479,20 @@ export default Vue.extend({
           right: 0;
         }
       }
-      .stats {
-        padding: 100px 0;
-        width: 1200px;
-        margin: 0 auto;
-        .title {
-          margin-bottom: 20px;
-        }
-        img {
-          width: 100%;
-          border: 1px solid #ffffff1a;
-          border-radius: 8px;
-        }
-      }
       .footer {
         width: 1200px;
-        height: 386px;
         margin: 0 auto;
-        font-size: 30px;
+        padding: 140px 0 40px;
+        font-size: 24px;
         h2 {
           margin-bottom: 50px;
         }
         ul {
-          padding: 20px 0;
+          padding: 40px 0;
+          display: flex;
           li {
             position: relative;
-            padding: 0 20px;
-            text-align: left;
-            &:before {
-              content: "";
-                position: absolute;
-                top: 15px;
-                left: 0;
-                box-sizing: border-box;
-                width: 12px;
-                height: 12px;
-                border-radius: 50%;
-                background-color: #fff;
-                transition: all .2s;
-            }
+            margin-right: 20px;
           }
         }
       }
