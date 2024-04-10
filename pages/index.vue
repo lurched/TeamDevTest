@@ -21,6 +21,7 @@
           //- li ENG
     div.main
       div.banner
+        div(id="iviewUi").iviewUi
         div.banner-center
           | AI EQUITY SHARING  AND AI WORKS TRANSACTIONS
           p A NEW DECENTRALIZED NETWORK SYSTEM
@@ -131,11 +132,13 @@
 
 <script>
 import Vue from 'vue'
+import myMixins from '../components/iviewUi'
 if (process.browser) { // 在这里根据环境引入wow.js
   var {WOW} = require('wowjs')
 }
 export default Vue.extend({
   name: 'IndexPage',
+  mixins: [myMixins],
   data() {
     return {
       swiperOption: {
@@ -243,11 +246,15 @@ export default Vue.extend({
         margin: 15px 0;
       }
       .banner {
-        background: url(~assets/images/banner.webp) no-repeat;
+        // background: url(~assets/images/banner.webp) no-repeat;
         background-size: 100% auto;
         position: relative;
-        height: 1080px;
-
+        height: 800px;
+        .iviewUi {
+          position: absolute;
+          top: -200px;
+          right: 0;
+        }
         &-center {
           width: 1080px;
           height: 100%;
