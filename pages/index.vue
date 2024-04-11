@@ -1,132 +1,132 @@
 <template lang="pug">
-  section.ai
-    header
-      div.nav
-        ul
-          li.logo
-            img(src="~assets/images/logo2.png", alt="logo")
-            |AIDataShare
-          li
-            div WHITE PAPER
-              div.line
-          li(@click="scrollToPosition('service')")
-            div SERVICE
-              div.line
-          li(@click="scrollToPosition('aias')")
-            div AIAS
-              div.line
-          li(@click="scrollToPosition('recommend')")
-            div RECOMMEND
-              div.line
-          //- li ENG
-    div.main
-      div.banner
-        div(id="iviewUi").iviewUi
-        div.banner-center
-          | AI EQUITY SHARING  AND AI WORKS TRANSACTIONS
-          p A NEW DECENTRALIZED NETWORK SYSTEM
-      div.vision.wow.animate__fadeInUp
-        h2.title VISION
-        div.vision-content
-            img(src="~assets/images/vision.png", alt="alt")
-            ul
-              li
-                p.subtitle Generate revenue for    generative AI creators
-                span Because the generation of AI is random,
-                  |even if you input the same prompt word, the result of each time is different,
-                  |and the result is totally different from others. Your every attempt becomes a unique,
-                  |exclusive AI art. Upload your AI work and generative prompts to our network,
-                  |cast them into NFT and trade them to start your journey for making revenue.
-              li
-                p.subtitle Reduce the cost of AI use, so that AI is more accessible, and globally affordable
-                span The operation of AI consumes a lot of computing power and electricity,
-                  | so it is inevitable to pay for using AI service. However,
-                  | people in many places around the world cannot get US dollars or electronic payment,
-                  | and many people cannot afford the cost of AI use due to economic difficulties. AIDataShare Network aims to solve these problems.
-      div.service.wow.animate__fadeInUp(ref="service")
-        h2.wow.animate__fadeInDown.title SERVICE
-        ul
-          li.wow.animate__fadeInLeft
-            h3.subtitle AI ACCOUNTS SHARING
-            p Premise: Your AI account password can only be verified by email, mobile phone number or other ways to modify the password, to protect your basic rights and interests.
-            p On the premise of not affecting your normal use,  we suggest you share your AI account for free, but you can also charge. Our system will give tokens rewards according to your sharing situation. Sharing account rewards can also be regarded as a mining mechanism, similar to POS mining.
-          li.wow.animate__fadeInRight
-            img(src="~assets/images/service.webp", alt="alt")
-            h3.subtitle GENERATIVE AI TRADING
-            p It`s time to upload your AI works and generative prompts to our network, mint them into NFTs and trade them to start your journey for making revenue.
-      div.recommend(ref="recommend")
-        h2.wow.animate__fadeInDown.title RECOMMEND
-        ul
-          li
-            img(src="~assets/images/chatgpt.png", alt="alt")
-            |ChatGpt
-          li
-            img(src="~assets/images/bard.svg", alt="alt")
-            |Bard
-          li
-            img(src="~assets/images/anthropic.svg", alt="alt")
-            |Anthropic
-          li
-            img(src="~assets/images/youchat.webp", alt="alt")
-            |YouChat
-          li
-            img(src="~assets/images/gemini.svg", alt="alt")
-            |Gemini
-          li
-            img(src="~assets/images/midjourney.svg", alt="alt")
-            |Midjourney
-          li
-            img(src="~assets/images/adobe.svg", alt="alt")
-            |Adobe Firefly
-          li
-            img(src="~assets/images/stabie.png", alt="alt")
-            |Stable Diffusion
-      div.aias.wow.animate__fadeInUp(ref="aias")
-        h2.title AIAS（AIDataShareCoin Token）
-        img.logo(src="~assets/images/logo.png", alt="alt")
-        p AIAS is the only payment method in the transaction services provided by our network.Below is the distribution method of the token:
-        ul
-          li
-            span Sharing Reward (mining)
-            span 50%
-          li
-            span Community operations
-            span 10%
-          li
-            span Investors
-            span 10%
-          li
-            span Founders team
-            span 10%
-      div.technology
-        h2.title Technology Roadmap
-        client-only
-          swiper(:options="swiperOption" ref="mySwiper")
-            swiper-slide.swiper-slide(
-              v-for="(item, index) in technologyData"
-              :key="index"
-            )
-              p {{item.time}}
-              div.circle.line
-              span {{item.desc}}
-          div.button-prev(
-            @click="prev"
-            :class="activeIndex === 0 ? 'disabled' : ''"
+section.ai
+  header
+    div.nav
+      ul
+        li.logo
+          img(src="~assets/images/logo2.png", alt="logo")
+          |AIDataShare
+        li
+          div WHITE PAPER
+            div.line
+        li(@click="scrollToPosition('service')")
+          div SERVICE
+            div.line
+        li(@click="scrollToPosition('aias')")
+          div AIAS
+            div.line
+        li(@click="scrollToPosition('recommend')")
+          div RECOMMEND
+            div.line
+        //- li ENG
+  div.main
+    div.banner
+      div(id="iviewUi").iviewUi
+      div.banner-center
+        | AI EQUITY SHARING  AND AI WORKS TRANSACTIONS
+        p A NEW DECENTRALIZED NETWORK SYSTEM
+    div.vision.wow.animate__fadeInUp
+      h2.title VISION
+      div.vision-content
+          img(src="~assets/images/vision.png", alt="alt")
+          ul
+            li
+              p.subtitle Generate revenue for    generative AI creators
+              span Because the generation of AI is random,
+                |even if you input the same prompt word, the result of each time is different,
+                |and the result is totally different from others. Your every attempt becomes a unique,
+                |exclusive AI art. Upload your AI work and generative prompts to our network,
+                |cast them into NFT and trade them to start your journey for making revenue.
+            li
+              p.subtitle Reduce the cost of AI use, so that AI is more accessible, and globally affordable
+              span The operation of AI consumes a lot of computing power and electricity,
+                | so it is inevitable to pay for using AI service. However,
+                | people in many places around the world cannot get US dollars or electronic payment,
+                | and many people cannot afford the cost of AI use due to economic difficulties. AIDataShare Network aims to solve these problems.
+    div.service.wow.animate__fadeInUp(ref="service")
+      h2.wow.animate__fadeInDown.title SERVICE
+      ul
+        li.wow.animate__fadeInLeft
+          h3.subtitle AI ACCOUNTS SHARING
+          p Premise: Your AI account password can only be verified by email, mobile phone number or other ways to modify the password, to protect your basic rights and interests.
+          p On the premise of not affecting your normal use,  we suggest you share your AI account for free, but you can also charge. Our system will give tokens rewards according to your sharing situation. Sharing account rewards can also be regarded as a mining mechanism, similar to POS mining.
+        li.wow.animate__fadeInRight
+          img(src="~assets/images/service.webp", alt="alt")
+          h3.subtitle GENERATIVE AI TRADING
+          p It`s time to upload your AI works and generative prompts to our network, mint them into NFTs and trade them to start your journey for making revenue.
+    div.recommend(ref="recommend")
+      h2.wow.animate__fadeInDown.title RECOMMEND
+      ul
+        li
+          img(src="~assets/images/chatgpt.png", alt="alt")
+          |ChatGpt
+        li
+          img(src="~assets/images/bard.svg", alt="alt")
+          |Bard
+        li
+          img(src="~assets/images/anthropic.svg", alt="alt")
+          |Anthropic
+        li
+          img(src="~assets/images/youchat.webp", alt="alt")
+          |YouChat
+        li
+          img(src="~assets/images/gemini.svg", alt="alt")
+          |Gemini
+        li
+          img(src="~assets/images/midjourney.svg", alt="alt")
+          |Midjourney
+        li
+          img(src="~assets/images/adobe.svg", alt="alt")
+          |Adobe Firefly
+        li
+          img(src="~assets/images/stabie.png", alt="alt")
+          |Stable Diffusion
+    div.aias.wow.animate__fadeInUp(ref="aias")
+      h2.title AIAS（AIDataShareCoin Token）
+      img.logo(src="~assets/images/logo.png", alt="alt")
+      p AIAS is the only payment method in the transaction services provided by our network.Below is the distribution method of the token:
+      ul
+        li
+          span Sharing Reward (mining)
+          span 50%
+        li
+          span Community operations
+          span 10%
+        li
+          span Investors
+          span 10%
+        li
+          span Founders team
+          span 10%
+    div.technology
+      h2.title Technology Roadmap
+      client-only
+        swiper(:options="swiperOption" ref="mySwiper")
+          swiper-slide.swiper-slide(
+            v-for="(item, index) in technologyData"
+            :key="index"
           )
-            i.swiper-button-prev(slot="button-prev")
-          div.button-next(
-            @click="next"
-            :class="activeIndex === technologyData.length - 4 ? 'disabled' : ''"
-          )
-            i.swiper-button-next(slot="button-next")
-      div.footer
-        h2.wow.animate__fadeOutLeft.title Contact us
-        p Please contact us for any inquiries related to service and operation.
-        ul
-          li Email
-          li Twitter(X)
-          li Facebook
-        p Copyright ⓒ 2024 AIDATASHARE  All Rights Reserved.
+            p {{item.time}}
+            div.circle.line
+            span {{item.desc}}
+        div.button-prev(
+          @click="prev"
+          :class="activeIndex === 0 ? 'disabled' : ''"
+        )
+          i.swiper-button-prev(slot="button-prev")
+        div.button-next(
+          @click="next"
+          :class="activeIndex === technologyData.length - 4 ? 'disabled' : ''"
+        )
+          i.swiper-button-next(slot="button-next")
+    div.footer
+      h2.wow.animate__fadeOutLeft.title Contact us
+      p Please contact us for any inquiries related to service and operation.
+      ul
+        li Email
+        li Twitter(X)
+        li Facebook
+      p Copyright ⓒ 2024 AIDATASHARE  All Rights Reserved.
 
 </template>
 
