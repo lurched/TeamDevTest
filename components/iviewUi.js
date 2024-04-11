@@ -15,11 +15,11 @@ export default {
     //控制点颜色
     color: {
       type: String,
-      default: '#097bdb'
+      default: '#759dc0'
     },
     top: {
       type: Number,
-      default: 0
+      default: -400
     }
   },
   data() {
@@ -39,8 +39,10 @@ export default {
     }
   },
   mounted() {
-    this.init()
-    this.animate()
+    this.$nextTick(() => {
+      this.init()
+      this.animate()
+    })
   },
   methods: {
     init: function() {

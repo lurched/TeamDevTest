@@ -20,11 +20,11 @@ section.ai
             div.line
         //- li ENG
   div.main
-    div.banner
-      div(id="iviewUi").iviewUi
+    div(id="iviewUi").banner
       div.banner-center
-        | AI EQUITY SHARING  AND AI WORKS TRANSACTIONS
-        p A NEW DECENTRALIZED NETWORK SYSTEM
+        div.title
+          | AI EQUITY SHARING  AND AI WORKS TRANSACTIONS
+          p A NEW DECENTRALIZED NETWORK SYSTEM
     div.vision.wow.animate__fadeInUp
       h2.title VISION
       div.vision-content
@@ -98,7 +98,7 @@ section.ai
         li
           span Founders team
           span 10%
-    div.technology
+    div.technology.wow.animate__fadeInUp
       h2.title Technology Roadmap
       client-only
         swiper(:options="swiperOption" ref="mySwiper")
@@ -120,7 +120,7 @@ section.ai
         )
           i.swiper-button-next(slot="button-next")
     div.footer
-      h2.wow.animate__fadeOutLeft.title Contact us
+      h2.wow.animate__fadeInLeft.title Contact us
       p Please contact us for any inquiries related to service and operation.
       ul
         li Email
@@ -246,32 +246,31 @@ export default Vue.extend({
         margin: 15px 0;
       }
       .banner {
-        // background: url(~assets/images/banner.webp) no-repeat;
         background-size: 100% auto;
         position: relative;
         height: 800px;
-        .iviewUi {
-          position: absolute;
-          top: -200px;
-          right: 0;
-        }
         &-center {
-          width: 1080px;
+          position: absolute;
+          width: 100%;
           height: 100%;
-          margin: 0 auto;
-          padding: 10px;
-          border-radius: 50%;
-          font-size: 60px;
-          display: flex;
-          justify-content: center;
-          flex-direction: column;
-          align-items: center;
-          text-align: center;
-          background-color: rgba(2, 24, 48, 0.55);
-          p {
-            margin-top: 40px;
-            font-size: 40px;
-            color: #ffffffb3;
+          .title {
+            width: 1080px;
+            height: 100%;
+            margin: 0 auto;
+            padding: 10px;
+            border-radius: 50%;
+            font-size: 60px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background-color: rgba(2, 24, 48, 0.55);
+            p {
+              margin-top: 40px;
+              font-size: 40px;
+              color: #ffffffb3;
+            }
           }
         }
       }
