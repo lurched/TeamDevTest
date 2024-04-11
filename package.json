@@ -1,5 +1,5 @@
 {
-  "name": "AIDataShare",
+  "name": "ai",
   "version": "1.0.0",
   "private": true,
   "config": {
@@ -21,7 +21,7 @@
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/style-resources": "^1.2.2",
     "core-js": "^3.25.3",
-    "nuxt": "^2.15.8",
+    "nuxt": "^2.17.1",
     "pug": "^3.0.2",
     "pug-plain-loader": "^1.1.0",
     "swiper": "^5.4.5",
@@ -33,10 +33,10 @@
   },
   "devDependencies": {
     "eslint-config-prettier": "^8.5.0",
-    "node-sass": "^6.0.1",
     "prettier": "^2.7.1",
+    "sass": "^1.74.1",
     "sass-loader": "^10.4.1",
-    "webpack": "^4.46.0",
+    "webpack": "^4.47.0",
     "wowjs": "^1.1.3"
   }
 }
