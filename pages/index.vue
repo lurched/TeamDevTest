@@ -10,14 +10,15 @@ section.ai
           div WHITE PAPER
             div.line
         li(@click="scrollToPosition('service')")
-          div SERVICE
+          div VISION
             div.line
         li(@click="scrollToPosition('aias')")
-          div AIAS
+          div DRD
             div.line
-        li(@click="scrollToPosition('recommend')")
-          div RECOMMEND
-            div.line
+        li
+          a(src="https://market.derender.tech")
+            div MARKET
+              div.line
         //- li ENG
   div.main
     div.banner
@@ -40,10 +41,10 @@ section.ai
             | people in many places around the world cannot get US dollars or electronic payment,
             | and many people cannot afford the cost of AI use due to economic difficulties. DeRender Network aims to solve these problems.
         li.wow.animate__fadeInRight
-          img(src="~assets/images/service.webp", alt="alt")
-          h3.subtitle AI ACCOUNTS SHARING
-          p Premise: Your AI account password can only be verified by email, mobile phone number or other ways to modify the password, to protect your basic rights and interests.
-          p On the premise of not affecting your normal use,  we suggest you share your AI account for free, but you can also charge. Our system will give tokens rewards according to your sharing situation. Sharing account rewards can also be regarded as a mining mechanism, similar to POS mining.
+          img(src="~assets/images/service.jpg", alt="alt")
+      h3.subtitle AI ACCOUNTS SHARING & OTHERS SHARING
+      p Premise: Your AI account password can only be verified by email, mobile phone number or other ways to modify the password, to protect your basic rights and interests.
+      p On the premise of not affecting your normal use,  we suggest you share your AI account for free, but you can also charge. Our system will give tokens rewards according to your sharing situation. Sharing account rewards can also be regarded as a mining mechanism, similar to POS mining.
     div.recommend(ref="recommend")
       h2.wow.animate__fadeInDown.title RECOMMEND
       ul
@@ -72,9 +73,11 @@ section.ai
           img(src="~assets/images/stabie.png", alt="alt")
           |Stable Diffusion
     div.aias.wow.animate__fadeInUp(ref="aias")
-      h2.title AIAS（DeRenderCoin Token）
-      img.logo(src="~assets/images/logo.png", alt="alt")
-      p AIAS is the only payment method in the transaction services provided by our network.Below is the distribution method of the token:
+      div.aias-header
+        img.logo(src="~assets/images/logo2.png", alt="alt")
+        div.right
+          h2.title DRD（DeRender Token）
+          p DRD is the only payment method in the transaction services provided by our network.Below is the distribution method of the token:
       ul
         li
           span Sharing Reward (mining)
@@ -174,6 +177,11 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
+  @font-face {
+    font-family: "derender";src: url(@/assets/fonts/derender.woff2) format("woff2"),
+    url(@/assets/fonts/derender.woff2) format("woff");
+    font-display: swap;
+  }
   .ai {
     background-color: #000;
     color: #fff;
@@ -198,11 +206,20 @@ export default Vue.extend({
           font-size: 16px;
           li {
             display: flex;
-            align-items: center;
+            align-items: end;
             cursor: pointer;
+            a {
+              color: #fff;
+            }
             &.logo {
               margin-right: 300px;
-              font-size: 30px;
+              font-family: 'derender';
+              font-size: 24px;
+              --wght: 700;
+              --wdth: 99.62;
+              --slnt: 12;
+              --SRIF: 1;
+              font-variation-settings: 'wght' var(--wght),'wdth' var(--wdth),'slnt' var(--slnt),'SRIF' var(--SRIF);
               img {
                 filter: brightness(0) invert(1);
                 width: 50px;
@@ -228,18 +245,18 @@ export default Vue.extend({
     }
     .main {
       .title {
-        font-size: 60px;
+        font-size: 48px;
         text-align: center;
-        margin: 20px 0 60px;
+        margin: 30px 0;
         span {
           display: inline-block;
           margin: 0 40px;
         }
       }
       .subtitle {
-        font-size: 36px;
-        line-height: 40px;
-        margin: 15px 0;
+        font-size: 28px;
+        line-height: 36px;
+        margin: 10px 0;
       }
       .banner {
         background-image: url(@/assets/images/banner.webp);
@@ -275,20 +292,20 @@ export default Vue.extend({
       .service {
         width: 1200px;
         margin: 0 auto;
-        padding: 100px 0;
+        padding: 50px 0;
+        p {
+          font-size: 20px ;
+          margin-bottom: 10px;
+        }
         ul {
           width: 100%;
           display: flex;
           justify-content: space-between;
           li {
-            width: 500px;
+            width: 550px;
             img {
               width: 100%;
               border-radius: 8px;
-            }
-            p {
-              font-size: 24px ;
-              margin-bottom: 10px;
             }
           }
         }
@@ -325,30 +342,35 @@ export default Vue.extend({
         width: 1200px;
         margin: 0 auto;
         padding: 100px 0;
-        .title {
-          margin-bottom: 60px;
-          text-align: right;
-        }
-        .logo {
-          position: absolute;
-          width: 200px;
-          top: 110px;
-          left: 0;
-        }
-        p {
-          margin: 0 auto;
-          width: 650px;
-          font-size: 24px;
+        &-header {
+          margin-left: 50px;
+          display: flex;
+          .logo {
+            width: 200px;
+            filter: brightness(0) invert(1);
+          }
+          .right {
+            margin-left: 100px;
+            h2 {
+              // text-align: left;
+              margin-bottom: 10px;
+            }
+            p {
+              width: 800px;
+              font-size: 24px;
+            }
+          }
         }
         ul {
           width: 1200px;
-          margin: 60px auto 0;
-          border: 1px solid #ffffff1a;
+          margin: 30px auto 0;
+          border: 1px solid #333;
           border-radius: 8px;
-          background-color: #ffffff1a;
+          overflow: hidden;
+          // background-color: #fff;
           li {
             display: flex;
-            background-color: #ffffff1a;
+            // background-color: #ffffff1a;
             margin: 1px 0 0;
             &:first-child {
               margin: 0;
@@ -356,10 +378,11 @@ export default Vue.extend({
             span {
               flex: 1;
               margin: 0 1px;
-              background-color: #021830;
               padding: 10px;
               font-size: 24px;
               text-align: center;
+              border-bottom: 1px solid #333;
+              border-right: 1px solid #333;
               &:last-child {
                 margin: 0;
               }
@@ -461,10 +484,10 @@ export default Vue.extend({
         padding: 140px 0 40px;
         font-size: 24px;
         h2 {
-          margin-bottom: 50px;
+          margin-bottom: 30px;
         }
         ul {
-          padding: 40px 0;
+          padding: 20px 0;
           display: flex;
           li {
             position: relative;
