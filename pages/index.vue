@@ -22,10 +22,12 @@ section.ai
         //- li ENG
   div.main
     div.banner
+      img(src="@/assets/images/banner.webp")
       div.banner-center
         div.title
           | AI EQUITY SHARING  AND AI WORKS TRANSACTIONS
           p A NEW DECENTRALIZED NETWORK SYSTEM
+          a(href="https://market.derender.tech" target="_blank") WhitePaper
     div.service.wow.animate__fadeInUp(ref="service")
       h2.wow.animate__fadeInDown.title
         span
@@ -259,13 +261,16 @@ export default Vue.extend({
         margin: 10px 0;
       }
       .banner {
-        background-image: url(@/assets/images/banner.webp);
-        background-size: cover;
-        background-repeat: no-repeat;
         position: relative;
         height: 600px;
+        img {
+          width: 100%;
+          height: 600px;
+        }
         &-center {
           position: absolute;
+          top: 0;
+          z-index: 1;
           width: 100%;
           height: 100%;
           .title {
@@ -274,7 +279,7 @@ export default Vue.extend({
             margin: 0 auto;
             padding: 10px;
             border-radius: 50%;
-            font-size: 60px;
+            font-size: 56px;
             display: flex;
             justify-content: center;
             flex-direction: column;
@@ -282,9 +287,20 @@ export default Vue.extend({
             text-align: center;
             // background-color: rgba(2, 24, 48, 0.55);
             p {
-              margin-top: 40px;
-              font-size: 40px;
-              color: #ffffffb3;
+              margin-top: 10px;
+              font-size: 36px;
+              color: #c0c0c0;
+            }
+            a {
+              margin-top: 60px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 196px;
+              height: 54px;
+              background: #00E6A0;
+              color: #000;
+              font-size: 18px;
             }
           }
         }
