@@ -5,7 +5,7 @@ section.ai
       ul
         li.logo
           img(src="~assets/images/logo2.png", alt="logo")
-          |AIDataShare
+          |DeRender
         li
           div WHITE PAPER
             div.line
@@ -20,40 +20,30 @@ section.ai
             div.line
         //- li ENG
   div.main
-    div(id="iviewUi").banner
+    div.banner
       div.banner-center
         div.title
           | AI EQUITY SHARING  AND AI WORKS TRANSACTIONS
           p A NEW DECENTRALIZED NETWORK SYSTEM
-    div.vision.wow.animate__fadeInUp
-      h2.title VISION
-      div.vision-content
-          img(src="~assets/images/vision.png", alt="alt")
-          ul
-            li
-              p.subtitle Generate revenue for    generative AI creators
-              span Because the generation of AI is random,
-                |even if you input the same prompt word, the result of each time is different,
-                |and the result is totally different from others. Your every attempt becomes a unique,
-                |exclusive AI art. Upload your AI work and generative prompts to our network,
-                |cast them into NFT and trade them to start your journey for making revenue.
-            li
-              p.subtitle Reduce the cost of AI use, so that AI is more accessible, and globally affordable
-              span The operation of AI consumes a lot of computing power and electricity,
-                | so it is inevitable to pay for using AI service. However,
-                | people in many places around the world cannot get US dollars or electronic payment,
-                | and many people cannot afford the cost of AI use due to economic difficulties. AIDataShare Network aims to solve these problems.
     div.service.wow.animate__fadeInUp(ref="service")
-      h2.wow.animate__fadeInDown.title SERVICE
+      h2.wow.animate__fadeInDown.title
+        span
+         | VISION
+        | &
+        span
+         | SERVICE
       ul
         li.wow.animate__fadeInLeft
+          h3.subtitle Reduce the cost of AI use, so that AI is more accessible, and globally affordable
+          p The operation of AI consumes a lot of computing power and electricity,
+            | so it is inevitable to pay for using AI service. However,
+            | people in many places around the world cannot get US dollars or electronic payment,
+            | and many people cannot afford the cost of AI use due to economic difficulties. DeRender Network aims to solve these problems.
+        li.wow.animate__fadeInRight
+          img(src="~assets/images/service.webp", alt="alt")
           h3.subtitle AI ACCOUNTS SHARING
           p Premise: Your AI account password can only be verified by email, mobile phone number or other ways to modify the password, to protect your basic rights and interests.
           p On the premise of not affecting your normal use,  we suggest you share your AI account for free, but you can also charge. Our system will give tokens rewards according to your sharing situation. Sharing account rewards can also be regarded as a mining mechanism, similar to POS mining.
-        li.wow.animate__fadeInRight
-          img(src="~assets/images/service.webp", alt="alt")
-          h3.subtitle GENERATIVE AI TRADING
-          p It`s time to upload your AI works and generative prompts to our network, mint them into NFTs and trade them to start your journey for making revenue.
     div.recommend(ref="recommend")
       h2.wow.animate__fadeInDown.title RECOMMEND
       ul
@@ -82,7 +72,7 @@ section.ai
           img(src="~assets/images/stabie.png", alt="alt")
           |Stable Diffusion
     div.aias.wow.animate__fadeInUp(ref="aias")
-      h2.title AIAS（AIDataShareCoin Token）
+      h2.title AIAS（DeRenderCoin Token）
       img.logo(src="~assets/images/logo.png", alt="alt")
       p AIAS is the only payment method in the transaction services provided by our network.Below is the distribution method of the token:
       ul
@@ -126,19 +116,19 @@ section.ai
         li Email
         li Twitter(X)
         li Facebook
-      p Copyright ⓒ 2024 AIDATASHARE  All Rights Reserved.
+      p Copyright ⓒ 2024 DeRender  All Rights Reserved.
 
 </template>
 
 <script>
 import Vue from 'vue'
-import myMixins from '../components/iviewUi'
+// import myMixins from '../components/iviewUi'
 if (process.browser) { // 在这里根据环境引入wow.js
   var {WOW} = require('wowjs')
 }
 export default Vue.extend({
   name: 'IndexPage',
-  mixins: [myMixins],
+  // mixins: [myMixins],
   data() {
     return {
       swiperOption: {
@@ -185,14 +175,15 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
   .ai {
-    background-color: #021830;
+    background-color: #000;
     color: #fff;
     header {
       z-index: 10;
       position: sticky;
       top: 0;
       height: 100px;
-      background: linear-gradient(to bottom, #325355, #021830);
+      // background: linear-gradient(to bottom, #325355, #021830);
+      background: #000;
       color: #fff;
       .nav {
         margin: 0 auto;
@@ -204,7 +195,7 @@ export default Vue.extend({
           display: flex;
           justify-content: space-between;
           align-items: center;
-          font-size: 22px;
+          font-size: 16px;
           li {
             display: flex;
             align-items: center;
@@ -239,16 +230,23 @@ export default Vue.extend({
       .title {
         font-size: 60px;
         text-align: center;
-        margin-bottom: 80px;
+        margin: 20px 0 60px;
+        span {
+          display: inline-block;
+          margin: 0 40px;
+        }
       }
       .subtitle {
         font-size: 36px;
+        line-height: 40px;
         margin: 15px 0;
       }
       .banner {
-        background-size: 100% auto;
+        background-image: url(@/assets/images/banner.webp);
+        background-size: cover;
+        background-repeat: no-repeat;
         position: relative;
-        height: 800px;
+        height: 600px;
         &-center {
           position: absolute;
           width: 100%;
@@ -265,39 +263,11 @@ export default Vue.extend({
             flex-direction: column;
             align-items: center;
             text-align: center;
-            background-color: rgba(2, 24, 48, 0.55);
+            // background-color: rgba(2, 24, 48, 0.55);
             p {
               margin-top: 40px;
               font-size: 40px;
               color: #ffffffb3;
-            }
-          }
-        }
-      }
-      .vision {
-        width: 1200px;
-        margin: 0 auto;
-        padding: 30px 0;
-        &-content {
-          width: 100%;
-          display: flex;
-          align-items: center;
-          img {
-            width: 400px;
-            height: 500px;
-            border-radius: 8px;
-            object-fit: cover;
-            margin-right: 60px;
-          }
-          ul {
-            li {
-              p {
-                margin: 16px 0;
-                font-size: 36px;
-              }
-              span {
-                font-size: 24px;
-              }
             }
           }
         }
@@ -318,7 +288,7 @@ export default Vue.extend({
             }
             p {
               font-size: 24px ;
-              margin-bottom: 20px;
+              margin-bottom: 10px;
             }
           }
         }
@@ -421,7 +391,7 @@ export default Vue.extend({
               }
               p {
                 padding: 0 20px 40px;
-                font-size: 30px
+                font-size: 24px
               }
               .circle {
                 position: absolute;
@@ -448,7 +418,7 @@ export default Vue.extend({
               span {
                 display: block;
                 padding: 20px 20px;
-                font-size: 24px;
+                font-size: 20px;
                 word-wrap:break-word
               }
             }
@@ -456,7 +426,7 @@ export default Vue.extend({
         }
         .button-prev,.button-next {
           position: absolute;
-          top: 194px;
+          top: 184px;
           width: 50px;
           height: 50px;
           background-color: #ffffff1a;

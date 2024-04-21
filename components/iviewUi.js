@@ -19,7 +19,7 @@ export default {
     },
     top: {
       type: Number,
-      default: -400
+      default: 220
     }
   },
   data() {
@@ -53,7 +53,7 @@ export default {
       this.windowHalfX = window.innerWidth / 2
       container.style.position = 'relative'
       container.style.top = `${this.top}px`
-      container.style.height = `${(SCREEN_HEIGHT - this.top)}px`
+      container.style.height = `300px`
       document.getElementById('iviewUi').appendChild(container)
 
       this.camera = new THREE.PerspectiveCamera(75, SCREEN_WIDTH / SCREEN_HEIGHT, 1, 10000)
