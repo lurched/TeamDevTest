@@ -5,7 +5,7 @@ section.ai
       ul
         li.logo
           img(src="@/assets/images/logo.svg", alt="logo")
-          |DeRender
+          a(href="https://market.derender.tech" target="_blank") eRender
         li
           div WHITE PAPER
             div.line
@@ -13,10 +13,10 @@ section.ai
           div VISION
             div.line
         li(@click="scrollToPosition('aias')")
-          div DRD
+          div TOKENOMICS
             div.line
         li
-          a(src="https://market.derender.tech")
+          a(href="https://market.derender.tech")
             div MARKET
               div.line
         //- li ENG
@@ -25,8 +25,8 @@ section.ai
       img(src="@/assets/images/banner.webp")
       div.banner-center
         div.title
-          | AI EQUITY SHARING  AND AI WORKS TRANSACTIONS
-          p A NEW DECENTRALIZED NETWORK SYSTEM
+          | A New Decentralized Network Lease Equity Transaction Protocol and the Derivative Trading Market
+          p Run On Solana Network
           a(href="https://market.derender.tech" target="_blank") WhitePaper
     div.service.wow.animate__fadeInUp(ref="service")
       h2.wow.animate__fadeInDown.title
@@ -37,18 +37,16 @@ section.ai
          | SERVICE
       ul
         li.wow.animate__fadeInLeft
-          h3.subtitle Reduce the cost of AI use, so that AI is more accessible, and globally affordable
-          p The operation of AI consumes a lot of computing power and electricity,
-            | so it is inevitable to pay for using AI service. However,
-            | people in many places around the world cannot get US dollars or electronic payment,
-            | and many people cannot afford the cost of AI use due to economic difficulties. DeRender Network aims to solve these problems.
+          h3.subtitle Accessible, Affordable, and for Everyone AI Sharing Service
+          p The operation of AI consumes a lot of computing power and electricity, so it is inevitable to pay for using AI services. However, people in many places around the world cannot get US dollars or use electronic payment. On the other hand, many people cannot afford the cost of AI use due to economic difficulties. DeRender Network aims to solve these problems
         li.wow.animate__fadeInRight
           img(src="~assets/images/service.jpg", alt="alt")
       h3.subtitle AI ACCOUNTS SHARING & OTHERS SHARING
-      p Premise: Your AI account password can only be verified by email, mobile phone number or other ways to modify the password, to protect your basic rights and interests.
-      p On the premise of not affecting your normal use,  we suggest you share your AI account for free, but you can also charge. Our system will give tokens rewards according to your sharing situation. Sharing account rewards can also be regarded as a mining mechanism, similar to POS mining.
+      p Premise: Your AI account password can only be verified by email, mobile phone number or other ways to modify the password, to protect your basic rights and interests
+      p On the premise of not affecting your normal use, we suggest you share your AI account for free, but you can also earn revenue from lease it. Our system will give token rewards according to your sharing situation. Sharing account rewards will use a mining mechanism, similar to PoS mining
+      p Moreover, DeRender Network can apply in other streaming and music equity sharing, such as Netflix, Disney+, Spotify, and Prime Video ect
     div.recommend(ref="recommend")
-      h2.wow.animate__fadeInDown.title RECOMMEND
+      h2.wow.animate__fadeInDown.title Potential Applications
       ul
         li
           img(src="~assets/images/chatgpt.png", alt="alt")
@@ -78,21 +76,79 @@ section.ai
       div.aias-header
         img.logo(src="~assets/images/logo.svg", alt="alt")
         div.right
-          h2.title DRD（DeRender Token）
-          p DRD is the only payment method in the transaction services provided by our network.Below is the distribution method of the token:
+          p.subtitle $DeRD, the unity token of DeRender
+          span
+           | $DeRD is a utility token that was launched on the Solana Network in April 2024 to support the development and decentralized ownership of the project.
+          br
+          | The $DeRD token provides immediate utility as holders become a part of our business model, reaping the rewards with network equity lease and paying for subscriptions with the token.
+          br
+          | To be a holder is to be an essential part of the project itself. The main utility of the token is for Network Lease Equity Transaction Protocol and the Derivative Trading Market.
+          p.subtitle DeRD Tokens Allocation
       ul
         li
-          span Sharing Reward (mining)
-          span 50%
+          span Category
+          span Locked period(Months)
+          span Vesting Period(Months)
+          span Allocation
+          span Total Number of Tokens
+          span Unlocked at Genesis (TGE)
         li
-          span Community operations
+          span Sharing Reward
+          span 1
+          span 48
+          span 10.00%
+          span 202,211,300
+          span 0
+        li
+          span Mining Reward(PoS)
+          span 0
+          span 48
+          span 30.00%
+          span 606,633,900
+          span 0
+        li
+          span Advisors
+          span 4
+          span 12
+          span 10.00%
+          span 202,211,300
+          span 0
+        li
+          span Core Contributors
+          span 12
+          span 12
+          span 15.00%
+          span 303,316,950
+          span 0
+        li
+          span Ecosystem Growth Fund
+          span 1
+          span 36
+          span 15.00%
+          span 303,316,950
           span 10%
         li
-          span Investors
-          span 10%
+          span Angel Round
+          span 1
+          span 9
+          span 10.00%
+          span 202,211,300
+          span 15%
         li
-          span Founders team
-          span 10%
+          span Public Sale
+          span 0
+          span 0
+          span 10.00%
+          span 202,211,300
+          span 100%
+        li
+          span Total
+          span
+          span
+          span 100.00%
+          span 2,022,113,000
+          span 13.00%
+      span.hint As shown in the table above, to mark the milestone of OpenAI's official launch of ChatGPT to the public on November 30,2022, we set the total supply of $ DeRD at 2,022,113,000. Moreover, the DeRD tokens will not be issued in any form in the future.
     div.technology.wow.animate__fadeInUp
       h2.title Technology Roadmap
       client-only
@@ -103,7 +159,7 @@ section.ai
           )
             p {{item.time}}
             div.circle.line
-            span {{item.desc}}
+            span(v-for="v in item.desc") {{v}}
         div.button-prev(
           @click="prev"
           :class="activeIndex === 0 ? 'disabled' : ''"
@@ -119,8 +175,26 @@ section.ai
       p Please contact us for any inquiries related to service and operation.
       ul
         li Email
-        li Twitter(X)
-        li Facebook
+        li
+          a(
+            href="https://coinmarketcap.com/community/profile/DeRender/"
+            target="_blank"
+          ) Coinmarketcap
+        li
+          a(
+            href="https://twitter.com/DeRDofficial"
+            target="_blank"
+          ) Twitter
+        li
+          a(
+            href="https://medium.com/@derenderofficial"
+            target="_blank"
+          ) Medium
+        li
+          a(
+            href="https://discord.gg/TDSTFVVH"
+            target="_blank"
+          ) Discord
       p Copyright ⓒ 2024 DeRender  All Rights Reserved.
 
 </template>
@@ -149,10 +223,24 @@ export default Vue.extend({
       },
       activeIndex: 0,
       technologyData: [
-        {time: 'March 30th', desc: 'Open the registration online in a centralized way, and give the token rewards to users. Registration is also a way of mining.'},
-        {time: 'May 30th', desc: 'Open the AI account sharing and rental service functions in a centralized way, and the corresponding reward mechanism (mining mechanism).'},
-        {time: 'August 30th', desc: 'Open the AI work transaction in a centralized way.'},
-        {time: 'December 30th', desc: 'The system completes the transformation from centralization to decentralization, and transplantation to Solana.'}
+        {time: '2023.10', desc: [
+          'DeRender core team found the project. ',
+          'Proposed the plan to establish the DeRender protocol.'
+        ]},
+        {time: '2023.12', desc: [
+          'Complete the first edition of DeRender protocol rules.',
+          'Propose the verification plan.',
+          'For better user experience, firstly establish the centralized platform for a period of extensive verification, and then release the decentralized version.'
+        ]},
+        {time: '2024.4', desc: [
+          'Release DeRender Extensive Verification System (DeRender Market preview version).',
+          'Issue DeRD tokens.',
+          'Initiate the development of a decentralized version.',
+          'Develop decentralized version and receive feedback from the extensive validation system proceed simultaneously.'
+        ]},
+        {time: '2024.12', desc: [
+          'Release the official decentralized version of DeRender.'
+        ]}
       ]
     }
   },
@@ -192,7 +280,6 @@ export default Vue.extend({
       position: sticky;
       top: 0;
       height: 100px;
-      // background: linear-gradient(to bottom, #325355, #021830);
       background: #000;
       color: #fff;
       .nav {
@@ -208,7 +295,7 @@ export default Vue.extend({
           font-size: 16px;
           li {
             display: flex;
-            align-items: end;
+            align-items: center;
             cursor: pointer;
             a {
               color: #fff;
@@ -224,8 +311,11 @@ export default Vue.extend({
               font-variation-settings: 'wght' var(--wght),'wdth' var(--wdth),'slnt' var(--slnt),'SRIF' var(--SRIF);
               img {
                 width: 50px;
-                margin-right: 10px;
-                overflow: hidden;
+              }
+              a {
+                margin: 8px 0 0 -8px;
+                z-index: 1;
+                font-size: 28px;
               }
             }
             &:hover {
@@ -250,6 +340,7 @@ export default Vue.extend({
         font-size: 48px;
         text-align: center;
         margin: 30px 0;
+
         span {
           display: inline-block;
           margin: 0 40px;
@@ -259,6 +350,7 @@ export default Vue.extend({
         font-size: 28px;
         line-height: 36px;
         margin: 10px 0;
+        color: #00E6A0;
       }
       .banner {
         position: relative;
@@ -274,7 +366,7 @@ export default Vue.extend({
           width: 100%;
           height: 100%;
           .title {
-            width: 1080px;
+            width: 1200px;
             height: 100%;
             margin: 0 auto;
             padding: 10px;
@@ -284,10 +376,10 @@ export default Vue.extend({
             justify-content: center;
             flex-direction: column;
             align-items: center;
+            color: #fff;
             text-align: center;
-            // background-color: rgba(2, 24, 48, 0.55);
             p {
-              margin-top: 10px;
+              margin-top: 30px;
               font-size: 36px;
               color: #c0c0c0;
             }
@@ -367,12 +459,14 @@ export default Vue.extend({
           .right {
             margin-left: 100px;
             h2 {
-              // text-align: left;
               margin-bottom: 10px;
             }
             p {
               width: 800px;
               font-size: 24px;
+            }
+            span {
+              font-size: 18px;
             }
           }
         }
@@ -382,27 +476,34 @@ export default Vue.extend({
           border: 1px solid #333;
           border-radius: 8px;
           overflow: hidden;
-          // background-color: #fff;
           li {
             display: flex;
-            // background-color: #ffffff1a;
-            margin: 1px 0 0;
-            &:first-child {
-              margin: 0;
+            align-items: center;
+            border-bottom: 1px solid #333;
+            &:last-child {
+              border: none;
             }
             span {
               flex: 1;
-              margin: 0 1px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 198px;
+              height: 82px;
               padding: 10px;
               font-size: 24px;
               text-align: center;
-              border-bottom: 1px solid #333;
               border-right: 1px solid #333;
               &:last-child {
-                margin: 0;
+                border: none;
               }
             }
           }
+        }
+        .hint {
+          display: block;
+          margin: 10px;
+          font-size: 16px;
         }
       }
       .technology {
@@ -420,14 +521,18 @@ export default Vue.extend({
               word-wrap:break-word;
               &:hover {
                 p {
-                  color: #759dc0;
+                  color: #00E6A0;
                 }
                 .circle:before {
-                  border-color: #759dc0;
+                  border-color: #00E6A0;
                   transform: scale(1.25)
+                }
+                span {
+                  color: #fff;
                 }
               }
               p {
+                margin-bottom: 20px;
                 padding: 0 20px 40px;
                 font-size: 24px
               }
@@ -455,16 +560,17 @@ export default Vue.extend({
               }
               span {
                 display: block;
-                padding: 20px 20px;
+                padding: 0 20px;
                 font-size: 20px;
-                word-wrap:break-word
+                word-wrap:break-word;
+                color: #c0c4cc
               }
             }
           }
         }
         .button-prev,.button-next {
           position: absolute;
-          top: 184px;
+          top: 128px;
           width: 50px;
           height: 50px;
           background-color: #ffffff1a;
@@ -509,6 +615,12 @@ export default Vue.extend({
           li {
             position: relative;
             margin-right: 20px;
+            a {
+              color: #c0c4cc;
+              &:hover {
+                color: #fff;
+              }
+            }
             &:hover {
               color: #fff;
             }
