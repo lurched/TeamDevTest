@@ -4,7 +4,7 @@ section.ai
     div.nav
       ul
         li.logo
-          img(src="~assets/images/logo2.png", alt="logo")
+          img(src="@/assets/images/logo.svg", alt="logo")
           |DeRender
         li
           div WHITE PAPER
@@ -54,29 +54,29 @@ section.ai
           img(src="~assets/images/chatgpt.png", alt="alt")
           |ChatGpt
         li
-          img(src="~assets/images/bard.svg", alt="alt")
-          |Bard
-        li
-          img(src="~assets/images/anthropic.svg", alt="alt")
-          |Anthropic
-        li
-          img(src="~assets/images/youchat.webp", alt="alt")
-          |YouChat
+          img(src="~assets/images/midjourney.svg", alt="alt")
+          |Midjourney
         li
           img(src="~assets/images/gemini.svg", alt="alt")
           |Gemini
         li
-          img(src="~assets/images/midjourney.svg", alt="alt")
-          |Midjourney
+          img(src="~assets/images/stabie.png", alt="alt")
+          |Stable Diffusion
         li
           img(src="~assets/images/adobe.svg", alt="alt")
           |Adobe Firefly
         li
-          img(src="~assets/images/stabie.png", alt="alt")
-          |Stable Diffusion
+          img(src="~assets/images/netflix.svg", alt="alt")
+          |Netflix
+        li
+          img(src="~assets/images/disney-plus.svg", alt="alt")
+          |Disney Plus
+        li
+          img(src="~assets/images/primevideo.svg", alt="alt")
+          |Prime Video
     div.aias.wow.animate__fadeInUp(ref="aias")
       div.aias-header
-        img.logo(src="~assets/images/logo2.png", alt="alt")
+        img.logo(src="~assets/images/logo.svg", alt="alt")
         div.right
           h2.title DRD（DeRender Token）
           p DRD is the only payment method in the transaction services provided by our network.Below is the distribution method of the token:
@@ -223,9 +223,9 @@ export default Vue.extend({
               --SRIF: 1;
               font-variation-settings: 'wght' var(--wght),'wdth' var(--wdth),'slnt' var(--slnt),'SRIF' var(--SRIF);
               img {
-                filter: brightness(0) invert(1);
                 width: 50px;
                 margin-right: 10px;
+                overflow: hidden;
               }
             }
             &:hover {
@@ -363,7 +363,6 @@ export default Vue.extend({
           display: flex;
           .logo {
             width: 200px;
-            filter: brightness(0) invert(1);
           }
           .right {
             margin-left: 100px;
@@ -501,13 +500,19 @@ export default Vue.extend({
         font-size: 24px;
         h2 {
           margin-bottom: 30px;
+          color: #fff;
         }
+        color: #c0c4cc;
         ul {
           padding: 20px 0;
           display: flex;
           li {
             position: relative;
             margin-right: 20px;
+            &:hover {
+              color: #fff;
+            }
+            cursor: pointer;
           }
         }
       }
