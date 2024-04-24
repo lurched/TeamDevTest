@@ -174,7 +174,7 @@ section.ai
       h2.wow.animate__fadeInLeft.title Contact us
       p Please contact us for any inquiries related to service and operation.
       ul
-        li Email
+        li derenderofficial@gmail.com
         li
           a(
             href="https://coinmarketcap.com/community/profile/DeRender/"
