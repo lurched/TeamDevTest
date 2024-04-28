@@ -7,25 +7,24 @@ section.ai
           img(src="@/assets/images/logo.svg", alt="logo")
           a(href="https://market.derender.tech" target="_blank") eRender
         li
-          div WHITE PAPER
-            div.line
+          a(href="/whitepaper.pdf")
+            div WHITE PAPER
+              div.line
         li(@click="scrollToPosition('service')")
           div VISION
             div.line
-        li(@click="scrollToPosition('aias')")
+        li(@click="scrollToPosition('tokenomics')")
           div TOKENOMICS
             div.line
-        li
+        li.market
           a(href="https://market.derender.tech")
             div MARKET
-              div.line
-        //- li ENG
   div.main
     div.banner
       img(src="@/assets/images/banner.webp")
       div.banner-center
         div.title
-          | A New Decentralized Network Lease Equity Transaction Protocol and the Derivative Trading Market
+          | A New Protocol for the Lease and Transaction of Online Service Rights, and Its Derivative Trading Market
           p Run On Solana Network
           a(href="https://market.derender.tech" target="_blank") WhitePaper
     div.service.wow.animate__fadeInUp(ref="service")
@@ -45,7 +44,7 @@ section.ai
       p Premise: Your AI account password can only be verified by email, mobile phone number or other ways to modify the password, to protect your basic rights and interests
       p On the premise of not affecting your normal use, we suggest you share your AI account for free, but you can also earn revenue from lease it. Our system will give token rewards according to your sharing situation. Sharing account rewards will use a mining mechanism, similar to PoS mining
       p Moreover, DeRender Network can apply in other streaming and music equity sharing, such as Netflix, Disney+, Spotify, and Prime Video ect
-    div.recommend(ref="recommend")
+    div.potential(ref="potential")
       h2.wow.animate__fadeInDown.title Potential Applications
       ul
         li
@@ -72,18 +71,20 @@ section.ai
         li
           img(src="~assets/images/primevideo.svg", alt="alt")
           |Prime Video
-    div.aias.wow.animate__fadeInUp(ref="aias")
-      div.aias-header
+    div.description.wow.animate__fadeInUp
+      h2.wow.animate__fadeInDown.title DeRender Protocol Brief Description
+      p In brief, how do we implement this? Lessors post an account for lease, which can be rented by multiple lessees. The availability of the account is determined by a collective vote among the lessees. If the majority votes the account as usable, it is deemed usable; if not, it is unusable. Non-voting defaults to usable. Payment of the rent is based on the final voting outcome. As both parties in a transaction are not entirely trustworthy, both must deposit a security during the transaction process. If a lessee votes contrary to the majority, they are deemed dishonest and will be fined. Lessees cannot predict the final voting result; thus, casting an honest vote is in their best interest. There are many more details available in our white paper.
+    div.tokenomics.wow.animate__fadeInUp(ref="tokenomics")
+      h2.wow.animate__fadeInDown.title TOKENOMICS
+      div.tokenomics-header
         img.logo(src="~assets/images/logo.svg", alt="alt")
         div.right
           p.subtitle $DeRD, the unity token of DeRender
           span
-           | $DeRD is a utility token that was launched on the Solana Network in April 2024 to support the development and decentralized ownership of the project.
-          br
-          | The $DeRD token provides immediate utility as holders become a part of our business model, reaping the rewards with network equity lease and paying for subscriptions with the token.
-          br
-          | To be a holder is to be an essential part of the project itself. The main utility of the token is for Network Lease Equity Transaction Protocol and the Derivative Trading Market.
-          p.subtitle DeRD Tokens Allocation
+           | $DeRD is a token issued on the Solana Network, with a total supply of 2,022,113,000, to mark the milestone of OpenAI's official launch of ChatGPT to the public on November 30,2022. Its primary functions are to facilitate payments and staking within the DeRender marketplace. The market value and price of DeRD fluctuate with the trading volume of the market. In the DeRender trading market under the DeRender protocol, $DeRD is the exclusive currency for payments, staking, and other financial activities.
+          span The minting address is
+            a(href="https://solscan.io/token/HyhvsbDoxNPJYcMUHUopDWeU2ip6FxRatvrYMH6W7UjM") HyhvsbDoxNPJYcMUHUopDWeU2ip6FxRatvrYMH6W7UjM.
+          span The rights to issue more tokens or freeze them have been relinquished, allowing for public review and supervision of $DeRD's distribution and usage.
       ul
         li
           span Category
@@ -195,7 +196,7 @@ section.ai
             href="https://discord.gg/TDSTFVVH"
             target="_blank"
           ) Discord
-      p Copyright ⓒ 2024 DeRender  All Rights Reserved.
+      span Copyright ⓒ 2024 DeRender  All Rights Reserved.
 
 </template>
 
@@ -279,7 +280,7 @@ export default Vue.extend({
       z-index: 10;
       position: sticky;
       top: 0;
-      height: 100px;
+      height: 70px;
       background: #000;
       color: #fff;
       .nav {
@@ -288,12 +289,14 @@ export default Vue.extend({
         display: flex;
         ul {
           width: 100%;
-          height: 100px;
+          height: 70px;
           display: flex;
           justify-content: space-between;
           align-items: center;
           font-size: 16px;
           li {
+            height: 100%;
+            padding: 0 10px;
             display: flex;
             align-items: center;
             cursor: pointer;
@@ -303,12 +306,12 @@ export default Vue.extend({
             &.logo {
               margin-right: 300px;
               font-family: 'derender';
-              font-size: 24px;
               --wght: 700;
               --wdth: 99.62;
               --slnt: 12;
               --SRIF: 1;
               font-variation-settings: 'wght' var(--wght),'wdth' var(--wdth),'slnt' var(--slnt),'SRIF' var(--SRIF);
+              font-size: 24px;
               img {
                 width: 50px;
               }
@@ -323,12 +326,37 @@ export default Vue.extend({
                 width: 100%;
               }
             }
+            &.market {
+              position: relative;
+              background-color: #00E6A0;
+              padding: 0 20px;
+              a {
+                z-index: 2;
+                color: #000;
+              }
+              &:after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                display: block;
+                width: 0;
+                height: 100%;
+                background-color: #57f8c7;
+                transition: all .3s ease;
+              }
+              &:hover:after {
+                width: 100%;
+                z-index: 1;
+              }
+            }
             .line {
               width: 0;
               height: 4px;
               margin-top: 5px;
               margin-bottom: -10px;
-              background-color: rgb(0,224,202);
+              background-color: #00E6A0;
               transition: .3s;
             }
           }
@@ -340,6 +368,7 @@ export default Vue.extend({
         font-size: 48px;
         text-align: center;
         margin: 30px 0;
+        color: #00E6A0;
 
         span {
           display: inline-block;
@@ -350,7 +379,6 @@ export default Vue.extend({
         font-size: 28px;
         line-height: 36px;
         margin: 10px 0;
-        color: #00E6A0;
       }
       .banner {
         position: relative;
@@ -418,7 +446,7 @@ export default Vue.extend({
           }
         }
       }
-      .recommend {
+      .potential {
         width: 1200px;
         margin: 0 auto;
         ul {
@@ -445,11 +473,17 @@ export default Vue.extend({
           }
         }
       }
-      .aias {
+      .description {
+        width: 1200px;
+        margin: 0 auto;
+        p {
+          font-size: 24px;
+        }
+      }
+      .tokenomics {
         position: relative;
         width: 1200px;
         margin: 0 auto;
-        padding: 100px 0;
         &-header {
           margin-left: 50px;
           display: flex;
@@ -466,7 +500,13 @@ export default Vue.extend({
               font-size: 24px;
             }
             span {
+              display: block;
               font-size: 18px;
+              a {
+                margin-left: 5px;
+                font-size: 20px;
+                color: #fff;
+              }
             }
           }
         }
@@ -603,10 +643,9 @@ export default Vue.extend({
         width: 1200px;
         margin: 0 auto;
         padding: 140px 0 40px;
-        font-size: 24px;
+        font-size: 16px;
         h2 {
           margin-bottom: 30px;
-          color: #fff;
         }
         color: #c0c4cc;
         ul {
@@ -626,6 +665,9 @@ export default Vue.extend({
             }
             cursor: pointer;
           }
+        }
+        span {
+          font-size: 12px;
         }
       }
     }
