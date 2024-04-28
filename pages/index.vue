@@ -7,7 +7,7 @@ section.ai
           img(src="@/assets/images/logo.svg", alt="logo")
           a(href="https://market.derender.tech" target="_blank") eRender
         li
-          a(href="/whitepaper.pdf")
+          a(href="/whitepaper.pdf" target="_blank")
             div WHITE PAPER
               div.line
         li(@click="scrollToPosition('service')")
@@ -17,7 +17,7 @@ section.ai
           div TOKENOMICS
             div.line
         li.market
-          a(href="https://market.derender.tech")
+          a(href="https://market.derender.tech" target="_blank")
             div MARKET
   div.main
     div.banner
@@ -26,7 +26,7 @@ section.ai
         div.title
           | A New Protocol for the Lease and Transaction of Online Service Rights, and Its Derivative Trading Market
           p Run On Solana Network
-          a(href="https://market.derender.tech" target="_blank") WhitePaper
+          a(href="/whitepaper.pdf" target="_blank") WhitePaper
     div.service.wow.animate__fadeInUp(ref="service")
       h2.wow.animate__fadeInDown.title
         span
@@ -83,7 +83,7 @@ section.ai
           span
            | $DeRD is a token issued on the Solana Network, with a total supply of 2,022,113,000, to mark the milestone of OpenAI's official launch of ChatGPT to the public on November 30,2022. Its primary functions are to facilitate payments and staking within the DeRender marketplace. The market value and price of DeRD fluctuate with the trading volume of the market. In the DeRender trading market under the DeRender protocol, $DeRD is the exclusive currency for payments, staking, and other financial activities.
           span The minting address is
-            a(href="https://solscan.io/token/HyhvsbDoxNPJYcMUHUopDWeU2ip6FxRatvrYMH6W7UjM") HyhvsbDoxNPJYcMUHUopDWeU2ip6FxRatvrYMH6W7UjM.
+            a(href="https://solscan.io/token/HyhvsbDoxNPJYcMUHUopDWeU2ip6FxRatvrYMH6W7UjM" target="_blank") HyhvsbDoxNPJYcMUHUopDWeU2ip6FxRatvrYMH6W7UjM.
           span The rights to issue more tokens or freeze them have been relinquished, allowing for public review and supervision of $DeRD's distribution and usage.
       ul
         li
@@ -150,6 +150,16 @@ section.ai
           span 2,022,113,000
           span 13.00%
       span.hint As shown in the table above, to mark the milestone of OpenAI's official launch of ChatGPT to the public on November 30,2022, we set the total supply of $ DeRD at 2,022,113,000. Moreover, the DeRD tokens will not be issued in any form in the future.
+    div.potential(ref="potential")
+      h2.wow.animate__fadeInDown.title EXCHANGES
+      ul
+        li
+          a(
+            href="https://jup.ag/swap/USDC-HyhvsbDoxNPJYcMUHUopDWeU2ip6FxRatvrYMH6W7UjM"
+            target="_blank"
+          )
+            img(src="~assets/images/jupiter.svg", alt="alt")
+            |Jupiter
     div.technology.wow.animate__fadeInUp
       h2.title Technology Roadmap
       client-only
@@ -276,6 +286,9 @@ export default Vue.extend({
   .ai {
     background-color: #000;
     color: #fff;
+    a {
+      color: #fff;
+    }
     header {
       z-index: 10;
       position: sticky;
@@ -367,7 +380,7 @@ export default Vue.extend({
       .title {
         font-size: 48px;
         text-align: center;
-        margin: 30px 0;
+        margin: 120px 0 30px;
         color: #00E6A0;
 
         span {
@@ -428,7 +441,6 @@ export default Vue.extend({
       .service {
         width: 1200px;
         margin: 0 auto;
-        padding: 50px 0;
         p {
           font-size: 20px ;
           margin-bottom: 10px;
@@ -477,6 +489,7 @@ export default Vue.extend({
         width: 1200px;
         margin: 0 auto;
         p {
+          text-indent: 100px;
           font-size: 24px;
         }
       }
@@ -642,7 +655,7 @@ export default Vue.extend({
       .footer {
         width: 1200px;
         margin: 0 auto;
-        padding: 140px 0 40px;
+        padding: 0 0 30px;
         font-size: 16px;
         h2 {
           margin-bottom: 30px;
