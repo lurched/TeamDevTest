@@ -9,6 +9,20 @@ div.exchanges
       )
         img(src="~assets/images/jupiter.svg", alt="alt")
         |Jupiter
+    li
+      a(
+        href="https://birdeye.so/token/HyhvsbDoxNPJYcMUHUopDWeU2ip6FxRatvrYMH6W7UjM?chain=solana"
+        target="_blank"
+      )
+        img(src="~assets/images/birdeye.png", alt="alt")
+        |Birdeye
+    li
+      a(
+        href="https://beta.raydium.io/swap/?inputMint=EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v&outputMint=HyhvsbDoxNPJYcMUHUopDWeU2ip6FxRatvrYMH6W7UjM"
+        target="_blank"
+      )
+        img(src="~assets/images/raydium.svg", alt="alt")
+        |Raydium
 </template>
 
 <script>
@@ -20,20 +34,24 @@ div.exchanges
   margin: 0 auto;
   ul {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
     li {
       width: 280px;
       height: 140px;
-      margin-bottom: 40px;
+      margin: 0 26px 40px 0;
       padding: 10px;
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      align-items: center;
       font-size: 24px;
       border: 1px solid #ffffff1a;
       border-radius: 8px;
+      &:nth-child(4n) {
+        margin-right: 0;
+      }
+      a {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+      }
       img {
         display: block;
         height: 70px;
