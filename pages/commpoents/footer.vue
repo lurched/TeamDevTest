@@ -21,7 +21,7 @@ div.footer
       ) Medium
     li
       a(
-        href="https://discord.gg/TDSTFVVH"
+        href="https://discord.gg/WPefanS9"
         target="_blank"
       ) Discord
   span Copyright ⓒ 2024 DeRender  All Rights Reserved.
