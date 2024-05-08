@@ -3,7 +3,7 @@ div.banner
   img(src="@/assets/images/banner.webp")
   div.banner-center
     div.title
-      | A New Protocol for the Lease and Transaction of Online Service Rights, and Its Derivative Trading Market
+      | A New Protocol Focusing on Global Resource Sharing in the AGI Field
       p Run On Solana Network
       a(href="/whitepaper.pdf" target="_blank") WhitePaper
 </template>
